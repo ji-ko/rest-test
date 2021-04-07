@@ -22,8 +22,14 @@ router.post("/", async (req, res) => {
 });
 
 router.get("/:reviewId", async (req, res) => {
-  const review = await Review.findOne({ kanji: req.params.reviewId });
-  res.json(review);
+  try {
+    const review = await Review.findOne({
+      kanji: req.params.reviewId,
+    }).orFail();
+    res.json(review);
+  } catch (err) {
+    res.send(`Error: '${req.params.reviewId}' was not found in the database.`)
+  }
 });
 
 module.exports = router;
