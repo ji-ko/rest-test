@@ -3,9 +3,8 @@ const app = express();
 const mongoose = require("mongoose");
 require("dotenv/config");
 
-app.get("/", (req, res) => {
-  res.send("Index");
-});
+const reviewsRoute = require("./routes/reviews");
+app.use("/reviews", reviewsRoute);
 
 mongoose.connect(
   `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PWD}@${process.env.DB_URI}/myFirstDatabase?retryWrites=true&w=majority`,
