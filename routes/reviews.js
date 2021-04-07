@@ -7,7 +7,19 @@ router.get("/", (req, res) => {
 });
 
 router.post("/", (req, res) => {
-  console.log(req.body);
+  const review = new Review({
+    kanji: req.body.kanji,
+    kana: req.body.kana,
+  });
+
+  review
+    .save()
+    .then((data) => {
+      res.json(data);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
 });
 
 module.exports = router;

@@ -7,9 +7,6 @@ const ReviewSchema = mongoose.Schema({
   kana: {
     type: String,
   },
-  reviews: {
-    type: Number,
-  },
   date: {
     type: Date,
     default: Date.now,
