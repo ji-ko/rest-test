@@ -21,4 +21,9 @@ router.post("/", async (req, res) => {
   res.json(savedReview);
 });
 
+router.get("/:reviewId", async (req, res) => {
+  const review = await Review.findOne({ kanji: req.params.reviewId });
+  res.json(review);
+});
+
 module.exports = router;
