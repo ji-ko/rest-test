@@ -3,6 +3,9 @@ const app = express();
 const mongoose = require("mongoose");
 require("dotenv/config");
 
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 const reviewsRoute = require("./routes/reviews");
 app.use("/reviews", reviewsRoute);
 
