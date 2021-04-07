@@ -34,9 +34,9 @@ router.get("/:kanji", async (req, res) => {
 
 router.delete("/:kanji", async (req, res) => {
   try {
-    const kanjiToFind = await Review.findOne({ kanji: req.params.kanji });
-    const kanjiId = kanjiToFind._id;
-    const kanjiToRemove = await Review.deleteOne({ kanji: req.params.kanji });
+    await Review.deleteOne({
+      kanji: req.params.kanji,
+    }).orFail();
     res.json({ removedKanji: req.params.kanji });
   } catch (err) {
     res.json({ errorMessage: "Not found" });
