@@ -21,14 +21,25 @@ router.post("/", async (req, res) => {
   res.json(savedReview);
 });
 
-router.get("/:reviewId", async (req, res) => {
+router.get("/:kanji", async (req, res) => {
   try {
     const review = await Review.findOne({
-      kanji: req.params.reviewId,
+      kanji: req.params.kanji,
     }).orFail();
     res.json(review);
   } catch (err) {
-    res.send(`Error: '${req.params.reviewId}' was not found in the database.`)
+    res.send(`Error: '${req.params.kanji}' was not found in the database.`);
+  }
+});
+
+router.delete("/:kanji", async (req, res) => {
+  try {
+    const kanjiToFind = await Review.findOne({ kanji: req.params.kanji });
+    const kanjiId = kanjiToFind._id;
+    const kanjiToRemove = await Review.deleteOne({ kanji: req.params.kanji });
+    res.json({ removedKanji: req.params.kanji });
+  } catch (err) {
+    res.json({ errorMessage: "Not found" });
   }
 });
 
