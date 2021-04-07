@@ -1,13 +1,14 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
+require("dotenv/config");
 
 app.get("/", (req, res) => {
   res.send("Index");
 });
 
 mongoose.connect(
-  "mongodb+srv://<user>:<pwd>@<url>/myFirstDatabase?retryWrites=true&w=majority",
+  `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PWD}@${process.env.DB_URI}/myFirstDatabase?retryWrites=true&w=majority`,
   { useNewUrlParser: true },
   () => {
     console.log("Connected to database");
