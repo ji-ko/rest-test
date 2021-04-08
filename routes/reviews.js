@@ -37,7 +37,7 @@ router.delete("/", async (req, res) => {
     await Review.deleteOne({
       kanji: req.body.kanji,
     }).orFail();
-    res.status(200).send('Kanji succesfully removed');
+    res.status(200).send("Kanji succesfully removed");
   } catch (err) {
     res.json({ errorMessage: "Not found" });
   }
