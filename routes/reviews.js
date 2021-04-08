@@ -32,12 +32,12 @@ router.get("/:kanji", async (req, res) => {
   }
 });
 
-router.delete("/:kanji", async (req, res) => {
+router.delete("/", async (req, res) => {
   try {
     await Review.deleteOne({
-      kanji: req.params.kanji,
+      kanji: req.body.kanji,
     }).orFail();
-    res.json({ removedKanji: req.params.kanji });
+    res.status(200).send('Kanji succesfully removed');
   } catch (err) {
     res.json({ errorMessage: "Not found" });
   }
