@@ -12,13 +12,16 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  const review = new Review({
-    kanji: req.body.kanji,
-    kana: req.body.kana,
-  });
-
-  const savedReview = await review.save();
-  res.json(savedReview);
+  try {
+    const review = new Review({
+      kanji: req.body.kanjiData,
+      kana: req.body.kanaData,
+    });
+    const savedReview = await review.save();
+    return res.sendFile('index.html')
+  } catch (err) {
+    res.json(err);
+  }
 });
 
 router.get("/:kanji", async (req, res) => {
