@@ -18,7 +18,7 @@ router.post("/", async (req, res) => {
       kana: req.body.kanaData,
     });
     const savedReview = await review.save();
-    return res.sendFile('index.html')
+    res.redirect("back");
   } catch (err) {
     res.json(err);
   }
@@ -38,7 +38,7 @@ router.get("/:kanji", async (req, res) => {
 router.delete("/", async (req, res) => {
   try {
     await Review.deleteOne({
-      kanji: req.body.kanji,
+      kanji: req.params.kanji,
     }).orFail();
     res.status(200).send("Kanji succesfully removed");
   } catch (err) {
