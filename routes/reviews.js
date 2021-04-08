@@ -43,4 +43,18 @@ router.delete("/:kanji", async (req, res) => {
   }
 });
 
+router.patch("/", async (req, res) => {
+  try {
+    const kanjiToUpdate = await Review.findOne({ kanji: req.body.kanji });
+    const kanjiToUpdateId = kanjiToUpdate._id;
+    const updatedKanji = await Review.updateOne(
+      { _id: kanjiToUpdateId },
+      { $set: { kana: req.body.kana } }
+    );
+    res.json(updatedKanji);
+  } catch (err) {
+    res.json({ errorMessage: "Not found" });
+  }
+});
+
 module.exports = router;
