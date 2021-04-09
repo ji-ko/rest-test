@@ -38,7 +38,7 @@ router.get("/:kanji", async (req, res) => {
 router.delete("/", async (req, res) => {
   try {
     await Review.deleteOne({
-      kanji: req.params.kanji,
+      kanji: req.body.kanji,
     }).orFail();
     res.status(200).send("Kanji succesfully removed");
   } catch (err) {
