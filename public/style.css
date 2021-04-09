@@ -19,13 +19,70 @@ dd {
   margin: 0;
 }
 
-.container {
-  margin: 0 auto;
-  width: 20%;
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.2em;
+  background-color: rgb(66, 99, 141);
+  color: #fff;
 }
 
-.form-container {
-  margin: 0 auto;
+input {
+  font-size: 1em;
+  border: none;
+  width: 30%;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.btnSubmit,
+.btnDel {
+  font-size: 0.6em;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 2%;
+}
+
+.btnDel {
+  background-color: rgb(209, 64, 64);
+  color: #fff;
+}
+
+.btnDel:hover {
+  background-color: rgb(243, 0, 0);
+}
+
+.btnDel:focus {
+  font-weight: bold;
+}
+
+.btnSubmit {
+  font-size: 1em;
+  border-top: 1px solid #000000;
+  background: #2eaa8b;
+  background: -webkit-linear-gradient(top, #ebebeb, #d9e7d5);
+  background: -moz-linear-gradient(top, #ebebeb, #d9e7d5);
+  padding: 5.5px 11px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+  -webkit-box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
+  -moz-box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
+  box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
+  text-shadow: rgba(0, 0, 0, 0.4) 0 1px 0;
+}
+
+.btnSubmit:hover {
+  font-weight: bold;
+}
+
+.container {
+  margin: 10px auto;
+  width: 25%;
+  min-width: 500px;
+  padding: 20px;
+  box-shadow: 1px 2px 0.5rem rgba(0, 0, 0, 0.5);
 }
 
 h1 {
@@ -38,23 +95,29 @@ ul {
 }
 
 ul li {
-  font-size: 1.3em;
-  color: rgb(112, 112, 112);
-}
-
-ul li:nth-child(even) {
-  background-color: rgba(255, 255, 255, 0.829);
+  color: rgb(246, 246, 246);
+  width: 100%;
+  font-size: 1.2em;
+  padding: 4px;
+  margin: 4px;
+  border-radius: 4%;
+  box-shadow: 1px 2px 0.1rem rgba(0, 0, 0, 0.5);
 }
 
 ul li:nth-child(odd) {
-  background-color: rgba(246, 246, 246, 0.561);
+  background-color: rgb(70, 96, 126);
+}
+
+ul li:nth-child(even) {
+  background-color: rgb(79, 108, 144);
 }
 
 a {
   text-decoration: none;
-  color: rgb(34, 34, 34);
+  color: #fff;
+  font-size: 1.2em;
 }
 
 a:hover {
-  font-weight: bold;
+  color: rgb(215, 236, 229);
 }
