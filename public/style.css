@@ -1,11 +1,12 @@
 ul {
   list-style-type: none;
+  
 }
 
 ul li {
   font-size: 1.5em;
-  width: 25%;
-  margin-bottom: 1px;
+  width: 100%;
+  margin: 0 auto;
   padding: 5px;
   color: rgb(112, 112, 112);
 }
@@ -15,8 +16,8 @@ ul li:nth-child(odd) {
 }
 
 ul li:nth-child(even) {
-    background-color: rgba(233, 227, 227, 0.561);
-  }
+  background-color: rgba(246, 246, 246, 0.561);
+}
 
 a {
   text-decoration: none;
