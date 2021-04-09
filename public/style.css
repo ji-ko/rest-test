@@ -1,0 +1,28 @@
+ul {
+  list-style-type: none;
+}
+
+ul li {
+  font-size: 1.5em;
+  width: 25%;
+  margin-bottom: 1px;
+  padding: 5px;
+  color: rgb(112, 112, 112);
+}
+
+ul li:nth-child(odd) {
+  background-color: rgba(255, 255, 255, 0.829);
+}
+
+ul li:nth-child(even) {
+    background-color: rgba(233, 227, 227, 0.561);
+  }
+
+a {
+  text-decoration: none;
+  color: rgb(34, 34, 34);
+}
+
+a:hover {
+  font-weight: bold;
+}
