@@ -22,6 +22,7 @@ fetchData().then((reviews) => {
           kanji: item.kanji,
         }),
       }).then((res) => console.log(res));
+      location.reload(); 
     });
     delBtn.classList.add("btn", "btn-danger", "btn-sm");
     li.innerHTML = `<a href="https://jisho.org/search/${item.kanji}" target="_blank" rel="noopener">${item.kanji}</a> 「${item.kana}」`;

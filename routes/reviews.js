@@ -18,7 +18,7 @@ router.post("/", async (req, res) => {
       kana: req.body.kanaData,
     });
     const savedReview = await review.save();
-    res.status(200).json(savedReview);
+    res.redirect("index.html");
   } catch (err) {
     res.json(err);
   }
