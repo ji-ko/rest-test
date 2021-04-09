@@ -9,9 +9,9 @@ async function fetchData() {
 fetchData().then((reviews) => {
   for (let item of reviews) {
     const li = document.createElement("li");
-    const delBtn = document.createElement("button");
-    delBtn.innerHTML = `x`;
-    delBtn.addEventListener("click", async () => {
+    const btnDel = document.createElement("button");
+    btnDel.innerHTML = `x`;
+    btnDel.addEventListener("click", async () => {
       const response = await fetch(`http://localhost:3333/reviews/`, {
         method: "delete",
         mode: "cors",
@@ -24,9 +24,9 @@ fetchData().then((reviews) => {
       }).then((res) => console.log(res));
       location.reload(); 
     });
-    delBtn.classList.add("btn", "btn-danger", "btn-sm");
+    btnDel.classList.add("btnDel");
     li.innerHTML = `<a href="https://jisho.org/search/${item.kanji}" target="_blank" rel="noopener">${item.kanji}</a> 「${item.kana}」`;
-    li.appendChild(delBtn);
+    li.appendChild(btnDel);
     ul.appendChild(li);
   }
 });

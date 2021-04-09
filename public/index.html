@@ -2,30 +2,29 @@
 <html lang="en">
 
 <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Open+Sans&family=Train+One&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>漢字復讐</title>
+    <title>漢字の復習</title>
 </head>
 
 <body>
     <div class="container">
         <ul id="data">
         </ul>
-        <div class="form-container">
             <form action="http://localhost:3333/reviews" method="POST">
-                <label for="kanjiData">漢字</label>
                 <input type="text" id="kanji-input" name="kanjiData"
                     pattern="/[\u3000-\u303F]+|[\u4E00-\u9FAF]+|[\u2605-\u2606]+|[\u2190-\u2195]+|\u203B/g;"
-                    title="KANJI" required><br>
-                <label for="kanjiData">仮名</label>
+                    title="Kanji" placeholder="漢字"required><br>
                 <input type="text" id="kana-input" name="kanaData"
                     pattern="/[\u3000-\u303F]+|[\u3040-\u309F]+|[\u30A0-\u30FF]+|[\uFF00-\uFFEF]+|[\u2190-\u2195]+|\u203B/g;"
-                    title="KANA" required><br>
-                <input type="submit" class="btn btn-dark" value="送る">
+                    title="Kana" placeholder="仮名" required><br>
+                <input type="submit" class="btnSubmit" value="送る" title="Add new kanji">
             </form>
-        </div>
     </div>
     <script src="script.js"></script>
 </body>
