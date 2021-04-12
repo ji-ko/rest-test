@@ -16,15 +16,15 @@
     <div class="container">
         <ul id="data">
         </ul>
-            <form action="http://localhost:3333/reviews" method="POST">
-                <input type="text" id="kanji-input" name="kanjiData"
-                    pattern="/[\u3000-\u303F]+|[\u4E00-\u9FAF]+|[\u2605-\u2606]+|[\u2190-\u2195]+|\u203B/g;"
-                    title="Kanji" placeholder="漢字"required><br>
-                <input type="text" id="kana-input" name="kanaData"
-                    pattern="/[\u3000-\u303F]+|[\u3040-\u309F]+|[\u30A0-\u30FF]+|[\uFF00-\uFFEF]+|[\u2190-\u2195]+|\u203B/g;"
-                    title="Kana" placeholder="仮名" required><br>
-                <input type="submit" class="btnSubmit" value="送る" title="Add new kanji">
-            </form>
+        <form action="http://localhost:3333/reviews" method="POST">
+            <input type="text" id="kanji-input" name="kanjiData"
+                pattern="/^[\u4E00-\u9FAF]+[\u3040-\u309F]*[\u4E00-\u9FAF]$*/g;" title="Kanji" placeholder="漢字"
+                required><br>
+            <input type="text" id="kana-input" name="kanaData"
+                pattern="/[\u3000-\u303F]+|[\u3040-\u309F]+|[\u30A0-\u30FF]+|[\uFF00-\uFFEF]+|[\u2190-\u2195]+|\u203B/g;"
+                title="Kana" placeholder="仮名" required><br>
+            <input type="submit" class="btnSubmit" value="送る" title="Add new kanji">
+        </form>
     </div>
     <script src="script.js"></script>
 </body>
